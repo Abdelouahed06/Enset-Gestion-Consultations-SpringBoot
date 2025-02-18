@@ -1,0 +1,17 @@
+# IDE-specific files for IntelliJ IDEA
+/.idea/
+/*.iml
+*.iws
+
+# Maven build directory
+/target/
+
+# Logs
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Maven wrapper
+.mvn/
