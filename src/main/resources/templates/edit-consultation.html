@@ -2,16 +2,79 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Edit Consultation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        form {
+            width: 50%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box; /* Prevent overflow */
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-link:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Edit Consultation</h1>
-    <form th:action="@{/consultations/update/{id}(id=${consultation.id})}" method="post">
-        <label>Patient Name: <input type="text" name="patientName" th:value="${consultation.patientName}" required></label><br>
-        <label>Doctor Name: <input type="text" name="doctorName" th:value="${consultation.doctorName}" required></label><br>
-        <label>Date: <input type="datetime-local" name="consultationDate" th:value="${consultation.consultationDate}" required></label><br>
-        <label>Description: <textarea name="description" required th:text="${consultation.description}"></textarea></label><br>
-        <button type="submit">Update Consultation</button>
-    </form>
-    <a th:href="@{/consultations}">Back to List</a>
+<h1>Edit Consultation</h1>
+<form th:action="@{/consultations/update/{id}(id=${consultation.id})}" method="post">
+    <label>Patient Name: <input type="text" name="patientName" th:value="${consultation.patientName}" required></label><br>
+    <label>Doctor Name: <input type="text" name="doctorName" th:value="${consultation.doctorName}" required></label><br>
+    <label>Date: <input type="datetime-local" name="consultationDate" th:value="${consultation.consultationDate}" required></label><br>
+    <label>Description: <textarea name="description" required th:text="${consultation.description}"></textarea></label><br>
+    <button type="submit">Update Consultation</button>
+</form>
+<a class="back-link" th:href="@{/consultations}">Back to List</a>
 </body>
 </html>
