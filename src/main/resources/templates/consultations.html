@@ -4,35 +4,41 @@
     <title>Consultation Management</title>
 </head>
 <body>
-<h1>Consultations</h1>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Patient Name</th>
-        <th>Doctor Name</th>
-        <th>Date</th>
-        <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="consultation : ${consultations}">
-        <td th:text="${consultation.id}"></td>
-        <td th:text="${consultation.patientName}"></td>
-        <td th:text="${consultation.doctorName}"></td>
-        <td th:text="${consultation.consultationDate}"></td>
-        <td th:text="${consultation.description}"></td>
-    </tr>
-    </tbody>
-</table>
+    <h1>Consultations</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Patient Name</th>
+                <th>Doctor Name</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="consultation : ${consultations}">
+                <td th:text="${consultation.id}"></td>
+                <td th:text="${consultation.patientName}"></td>
+                <td th:text="${consultation.doctorName}"></td>
+                <td th:text="${consultation.consultationDate}"></td>
+                <td th:text="${consultation.description}"></td>
+                <td>
+                    <a th:href="@{/consultations/{id}(id=${consultation.id})}">Details</a> |
+                    <a th:href="@{/consultations/edit/{id}(id=${consultation.id})}">Edit</a> |
+                    <a th:href="@{/consultations/delete/{id}(id=${consultation.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-<h2>Add Consultation</h2>
-<form th:action="@{/consultations}" method="post">
-    <label>Patient Name: <input type="text" name="patientName" required></label><br>
-    <label>Doctor Name: <input type="text" name="doctorName" required></label><br>
-    <label>Date: <input type="datetime-local" name="consultationDate" required></label><br>
-    <label>Description: <textarea name="description" required></textarea></label><br>
-    <button type="submit">Add Consultation</button>
-</form>
+    <h2>Add Consultation</h2>
+    <form th:action="@{/consultations}" method="post">
+        <label>Patient Name: <input type="text" name="patientName" required></label><br>
+        <label>Doctor Name: <input type="text" name="doctorName" required></label><br>
+        <label>Date: <input type="datetime-local" name="consultationDate" required></label><br>
+        <label>Description: <textarea name="description" required></textarea></label><br>
+        <button type="submit">Add Consultation</button>
+    </form>
 </body>
 </html>
