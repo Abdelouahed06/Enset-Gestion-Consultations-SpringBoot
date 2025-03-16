@@ -21,11 +21,13 @@ This is a Spring Boot web application for managing consultations. It uses an H2 
 - Maven 3.x or higher.
 - IntelliJ IDEA (or any other IDE).
 
+## Screenshot
+### Home :
+<img src="screenshots/Home.png" alt="Description" style="max-width:100%; height:auto;" />
+
 ## Setup Instructions
 
 ###  Clone the Repository
 ```bash
 git clone https://github.com/Abdelouahed06/Enset-Gestion-Consultations-SpringBoot.git
 
-## Screenshot
-<img src="screenshots/Home.png" alt="Description" style="max-width:100%; height:auto;" />
