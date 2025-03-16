@@ -22,8 +22,15 @@ This is a Spring Boot web application for managing consultations. It uses an H2 
 - IntelliJ IDEA (or any other IDE).
 
 ## Screenshot
-### Home :
+### Home Page :
 <img src="screenshots/Home.png" alt="Description" style="max-width:100%; height:auto;" />
+
+### Edit Page :
+<img src="screenshots/Edit.png" alt="Description" style="max-width:100%; height:auto;" />
+
+### Details Page :
+<img src="screenshots/Details.png" alt="Description" style="max-width:100%; height:auto;" />
+
 
 ## Setup Instructions
 
